@@ -2,8 +2,9 @@ import calcScroll from './calcScroll';
 import closeModal from './closeModal';
 
 const modals = () => {
+  let btnPressed = false;
 
-  function bindModal(triggerSelector, modalSelector, closeSelector, clickOnEnatherTrigger = true){
+  function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false){
     const trigger = document.querySelectorAll(triggerSelector),
         modal = document.querySelector(modalSelector),
         closeBtn = document.querySelector(closeSelector),
@@ -16,8 +17,15 @@ const modals = () => {
           e.preventDefault()
         }
 
+        btnPressed = true;
+
+        if(destroy) {
+          item.remove();
+        }
+
         windows.forEach(item => {
           item.style.display = 'none'
+          item.classList.add('animated', 'fadeIn')
         });
 
         modal.style.display = "block";
@@ -32,7 +40,7 @@ const modals = () => {
     });
 
     modal.addEventListener('click', ({target})=> {
-      if(target === modal && clickOnEnatherTrigger){
+      if(target === modal){
         closeModal(modalSelector);
         document.body.style.marginRight = `0px`;
       }
@@ -47,7 +55,7 @@ const modals = () => {
   }
 
     function showModalByTime(selector, time){
-      setTimeout(function() {
+      setTimeout(() => {
         let display;
 
         document.querySelectorAll('[data-modal]').forEach(item => {
@@ -57,16 +65,31 @@ const modals = () => {
         });
 
         if (!display) {
+          let scroll = calcScroll();
             document.querySelector(selector).style.display = 'block';
             document.body.style.overflow = "hidden";
+            document.body.style.marginRight = `${scroll}px`;
         }
       }, time);
-    };
+    }
+
+    function openByScroll(selector){
+      window.addEventListener('scroll', () => {
+        let allHeight = Math.max(document.documentElement.scrollHeight,document.body.scrollHeight)// получение высоты всей страницы для разных браузеров
+        if(!btnPressed && (window.pageYOffset + document.documentElement.clientHeight >= allHeight)) {
+          document.querySelector(selector).click();
+        }
+      })
+    }
+
 
   bindModal('.button-design','.popup-design', '.popup-design .popup-close');
   bindModal('.button-consultation','.popup-consultation', '.popup-consultation .popup-close');
+  bindModal('.fixed-gift','.popup-gift', '.popup-gift .popup-close', true);
 
-  showModalByTime('.popup-consultation', 5000);
+  openByScroll('.fixed-gift');
+
+  //showModalByTime('.popup-consultation', 5000);
 
 }
 

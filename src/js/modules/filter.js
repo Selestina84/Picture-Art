@@ -1,78 +1,54 @@
+
+
 const filter = () => {
   const menu = document.querySelector('.portfolio-menu'),
-      items = menu.querySelectorAll('li'),
-      btnAll = menu.querySelector('.all'),
-      btnLovers = menu.querySelector('.lovers'),
-      btnChef = menu.querySelector('.chef'),
-      btnGirl = menu.querySelector('.girl'),
-      btnGuy = menu.querySelector('.guy'),
-      btnGrandmother = menu.querySelector('.grandmother'),
-      btnGranddad = menu.querySelector('.granddad'),
-      wrapper = document.querySelector('.portfolio-wrapper'),
-      markAll = wrapper.querySelectorAll('.all'),
-      markGirl = wrapper.querySelectorAll('.girl'),
-      markLovers = wrapper.querySelectorAll('.lovers'),
-      markChef = wrapper.querySelectorAll('.chef'),
-      markGuy = wrapper.querySelectorAll('.guy'),
-      no = document.querySelector('.portfolio-no');
+        no = document.querySelector('.portfolio-no');
 
-const typeFilter = (markType) => {
-markAll.forEach(mark => {
-    mark.style.display = 'none';
-    mark.classList.remove('animated', 'fadeIn');
-});
+  menu.addEventListener('click', ({target}) => {
 
-no.style.display = "none";
-no.classList.remove('animated', 'fadeIn');
+    if (target && target.tagName == "LI") {
 
-if (markType) {
-    markType.forEach(mark => {
-        mark.style.display = 'block';
-        mark.classList.add('animated', 'fadeIn');
-    });
-} else {
-    no.style.display = 'block';
-    no.classList.add('animated', 'fadeIn');
-}
-};
+      menu.querySelectorAll('li').forEach(btn => btn.classList.remove('active'));
+      target.classList.add('active');
+  }
+  });
 
-btnAll.addEventListener('click', () => {
-typeFilter(markAll);
-});
+  function filter(markSelector){
 
-btnLovers.addEventListener('click', () => {
-typeFilter(markLovers);
-});
+    document.querySelectorAll('.portfolio-wrapper .all').forEach(item => {
+      item.style.display = 'none';
+      item.classList.remove('animated', 'fadeIn')
+    })
 
-btnChef.addEventListener('click', () => {
-typeFilter(markChef);
-});
+    no.style.display = "none";
+    no.classList.remove('animated', 'fadeIn');
 
-btnGuy.addEventListener('click', () => {
-typeFilter(markGuy);
-});
 
-btnGirl.addEventListener('click', () => {
-typeFilter(markGirl);
-});
+    if (markSelector) {
+      const markType = document.querySelectorAll(markSelector)
+      markType.forEach(mark => {
+          mark.style.display = 'block';
+          mark.classList.add('animated', 'fadeIn');
+      });
+    } else {
+      no.style.display = 'block';
+      no.classList.add('animated', 'fadeIn');
+    }
+  };
 
-btnGrandmother.addEventListener('click', () => {
-typeFilter();
-});
+  function clickBtn(selector, btnSelector){
+    document.querySelector(btnSelector).addEventListener('click', () =>{
+        filter(selector);
+    })
+  };
 
-btnGranddad.addEventListener('click', () => {
-typeFilter();
-});
-
-menu.addEventListener('click', (e) => {
-let target = e.target;
-
-if (target && target.tagName == "LI") {
-    items.forEach(btn => btn.classList.remove('active'));
-    target.classList.add('active');
-}
-});
-
+  clickBtn('.portfolio-wrapper .all', '.portfolio-menu .all');
+  clickBtn('.portfolio-wrapper .lovers', '.portfolio-menu .lovers');
+  clickBtn('.portfolio-wrapper .chef', '.portfolio-menu .chef');
+  clickBtn('.portfolio-wrapper .girl', '.portfolio-menu .girl');
+  clickBtn('.portfolio-wrapper .guy', '.portfolio-menu .guy');
+  clickBtn('','.portfolio-menu .grandmother');
+  clickBtn('','.portfolio-menu .granddad');
 
 }
 

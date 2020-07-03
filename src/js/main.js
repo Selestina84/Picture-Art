@@ -4,7 +4,7 @@ import showMoreStyles from './modules/showMoreStyles';
 import forms from './modules/forms';
 import dragEndDrop from './modules/dragEndDrop';
 import changeImage from './modules/changeImage';
-import filter1 from './modules/filter1';
+import filter from './modules/filter';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict'
@@ -16,5 +16,5 @@ window.addEventListener('DOMContentLoaded', () => {
   forms();
   dragEndDrop();
   changeImage('.sizes-block');
-  filter1();
+  filter();
 })

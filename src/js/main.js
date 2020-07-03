@@ -2,6 +2,7 @@ import modals from './modules/modals';
 import sliders from './modules/sliders';
 import showMoreStyles from './modules/showMoreStyles';
 import forms from './modules/forms';
+import dragEndDrop from './modules/dragEndDrop';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict'
@@ -11,4 +12,5 @@ window.addEventListener('DOMContentLoaded', () => {
   sliders('.main-slider-item','vertical');
   showMoreStyles('.button-styles','.styles-2');
   forms();
+  dragEndDrop();
 })

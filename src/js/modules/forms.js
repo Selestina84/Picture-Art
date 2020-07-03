@@ -94,7 +94,7 @@ const forms =() => {
           upload.forEach(item => {
             item.previousElementSibling.textContent = "Файл не выбран";
         });
-        },5000);
+        },3000);
       });
     });
   });

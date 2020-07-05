@@ -7,6 +7,7 @@ import changeImage from './modules/changeImage';
 import filter from './modules/filter';
 import burger from './modules/burger';
 import scrolling from './modules/scrolling';
+import accordion from './modules/accordion';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict'
@@ -21,4 +22,5 @@ window.addEventListener('DOMContentLoaded', () => {
   filter();
   burger('.burger-menu', '.burger');
   scrolling('.pageup');
+  accordion('.accordion-heading')
 })

@@ -6,6 +6,7 @@ import dragEndDrop from './modules/dragEndDrop';
 import changeImage from './modules/changeImage';
 import filter from './modules/filter';
 import burger from './modules/burger';
+import scrolling from './modules/scrolling';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict'
@@ -19,4 +20,5 @@ window.addEventListener('DOMContentLoaded', () => {
   changeImage('.sizes-block');
   filter();
   burger('.burger-menu', '.burger');
+  scrolling('.pageup');
 })

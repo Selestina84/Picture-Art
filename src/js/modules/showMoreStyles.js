@@ -2,7 +2,7 @@ const showMoreStyles = (trigger, items) => {
   const btn = document.querySelector(trigger),
         cards = document.querySelectorAll(items);
 
-  cards.forEach(card => {
+/*   cards.forEach(card => {
     card.classList.add('animated', 'fadeInUp')
   });
 
@@ -13,7 +13,7 @@ const showMoreStyles = (trigger, items) => {
     })
 
     btn.remove();
-  })
+  }) */
 
 }
 

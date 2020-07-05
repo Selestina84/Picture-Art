@@ -1,10 +1,8 @@
-import closeModal from './closeModal';
+
 
 const forms =() => {
   const form = document.querySelectorAll('form'),
         upload = document.querySelectorAll('[name = "upload"]');
-      //  input = document.querySelectorAll('input'),
-      //  modals = document.querySelectorAll('[data-modal]');
 
   const message = {
     loading: "Идет загрузка",
@@ -19,8 +17,6 @@ const forms =() => {
     designer: 'assets/server.php',
     questions: 'assets/question.php'
   }
-
-  //checkNumInputs('input[name = "user_phone"]')
 
   const postData = async(url, data) => {
     const res = await fetch (url, {
@@ -37,7 +33,6 @@ const forms =() => {
       arr[0].length > 6 ? dots = "..." : dots = '.';
       const name = arr[0].substring(0, 6) + dots + arr[1];
       item.previousElementSibling.textContent = name;
-      //console.log(name)
     })
   });
 
@@ -82,7 +77,6 @@ const forms =() => {
         textMessage.textContent = message.failure;
       })
       .finally(() => {
-      // clearInputs();
         setTimeout(()=>{
           form.forEach(item => {
             item.reset();

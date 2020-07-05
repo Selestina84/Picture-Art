@@ -8,6 +8,7 @@ import filter from './modules/filter';
 import burger from './modules/burger';
 import scrolling from './modules/scrolling';
 import accordion from './modules/accordion';
+import checkTextInputs from './modules/checkTextInputs';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict'
@@ -22,5 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
   filter();
   burger('.burger-menu', '.burger');
   scrolling('.pageup');
-  accordion('.accordion-heading')
+  accordion('.accordion-heading');
+  checkTextInputs('[name = "name"]');
+  checkTextInputs('[name = "message"]');
 })

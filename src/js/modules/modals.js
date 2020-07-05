@@ -53,15 +53,6 @@ const modals = () => {
         btnUp.style.display = "block";
       }
     });
-
-    document.body.addEventListener('keydown', (e)=> {
-      if(e.keyCode === 27 && clickOnEnatherTrigger){
-        closeModal(modalSelector);
-        document.body.style.marginRight = `0px`;
-    //Добавляем кнопку наверх обратно
-        btnUp.style.display = "block";
-      }
-    });
   }
 
     function showModalByTime(selector, time){
@@ -99,7 +90,7 @@ const modals = () => {
 
   openByScroll('.fixed-gift');
 
-  //showModalByTime('.popup-consultation', 60000);
+  showModalByTime('.popup-consultation', 60000);
 
 }
 

@@ -2,7 +2,9 @@ import calcScroll from './calcScroll';
 import closeModal from './closeModal';
 
 const modals = () => {
-  let btnPressed = false;
+  let btnPressed = false,
+  //кнопка наверх
+      btnUp = document.querySelector('.pageup')
 
   function bindModal(triggerSelector, modalSelector, closeSelector, destroy = false){
     const trigger = document.querySelectorAll(triggerSelector),
@@ -31,18 +33,24 @@ const modals = () => {
         modal.style.display = "block";
         document.body.classList.add('modal-open');
         document.body.style.marginRight = `${scroll}px`;
+    //убираем кнопку наверх
+        btnUp.style.display = "none";
       });
     });
 
     closeBtn.addEventListener('click', () => {
       closeModal(modalSelector);
       document.body.style.marginRight = `0px`;
+    //Добавляем кнопку наверх обратно
+      btnUp.style.display = "block";
     });
 
     modal.addEventListener('click', ({target})=> {
       if(target === modal){
         closeModal(modalSelector);
         document.body.style.marginRight = `0px`;
+    //Добавляем кнопку наверх обратно
+        btnUp.style.display = "block";
       }
     });
 
@@ -50,6 +58,8 @@ const modals = () => {
       if(e.keyCode === 27 && clickOnEnatherTrigger){
         closeModal(modalSelector);
         document.body.style.marginRight = `0px`;
+    //Добавляем кнопку наверх обратно
+        btnUp.style.display = "block";
       }
     });
   }
@@ -89,7 +99,7 @@ const modals = () => {
 
   openByScroll('.fixed-gift');
 
-  //showModalByTime('.popup-consultation', 5000);
+  //showModalByTime('.popup-consultation', 60000);
 
 }
 

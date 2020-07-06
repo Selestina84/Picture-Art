@@ -817,23 +817,6 @@ h4 {
 .card-3 .card-block-text {
   padding-top: 4rem;
 }
-.promo-2 {
-  padding: 9rem 0 10rem 0;
-}
-.promo-2-block {
-  margin-left: 10rem;
-}
-.promo-2-block .p-heading {
-  margin-top: 5rem;
-}
-.promo-2-block .button-order {
-  margin: 6rem 0 4rem 0;
-}
-.promo-2 img {
-  max-width: 100%;
-  position: relative;
-  right: -10rem;
-}
 .feedback {
   background-color: #f7e7e6;
   padding: 9rem 0;
@@ -1371,15 +1354,7 @@ h4 {
   .card-3 .card-block-text {
     padding-top: 2rem;
   }
-  .promo-2 .p-heading {
-    margin-top: 0;
-  }
-  .promo-2 .button-order {
-    margin-top: 3rem;
-  }
-  .promo-2 img {
-    right: 0;
-  }
+
   .feedback-slider-item {
     padding-bottom: 7rem;
   }
@@ -1475,19 +1450,7 @@ h4 {
   .card-3 .card-block-text {
     padding-top: 0;
   }
-  .promo-2-block {
-    margin: 0;
-  }
-  .promo-2-block h2,
-  .promo-2-block .p-heading {
-    text-align: center;
-  }
-  .promo-2-block .button-order {
-    margin: 4rem auto;
-  }
-  .promo-2 img {
-    left: -10%;
-  }
+
   .feedback-heading {
     font-size: 2rem;
   }
@@ -1705,9 +1668,6 @@ h4 {
   }
   .card-3 {
     padding: 0;
-  }
-  .promo-2 {
-    padding: 5rem 0;
   }
   .feedback {
     padding: 5rem 0;

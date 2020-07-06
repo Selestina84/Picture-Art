@@ -1,5 +1,5 @@
 import calcScroll from './calcScroll';
-import closeModal from './closeModal';
+import closeModals from './closeModals';
 
 const modals = () => {
   let btnPressed = false,
@@ -39,7 +39,7 @@ const modals = () => {
     });
 
     closeBtn.addEventListener('click', () => {
-      closeModal(modalSelector);
+      closeModals(modalSelector);
       document.body.style.marginRight = `0px`;
     //Добавляем кнопку наверх обратно
       btnUp.style.display = "block";
@@ -47,7 +47,7 @@ const modals = () => {
 
     modal.addEventListener('click', ({target})=> {
       if(target === modal){
-        closeModal(modalSelector);
+        closeModals(modalSelector);
         document.body.style.marginRight = `0px`;
     //Добавляем кнопку наверх обратно
         btnUp.style.display = "block";

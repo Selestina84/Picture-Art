@@ -31,7 +31,7 @@ const modals = () => {
         });
 
         modal.style.display = "block";
-        document.body.classList.add('modal-open');
+        document.body.style.overflow = 'hidden'
         document.body.style.marginRight = `${scroll}px`;
     //убираем кнопку наверх
         btnUp.style.display = "none";
@@ -60,9 +60,9 @@ const modals = () => {
         let display;
 
         document.querySelectorAll('[data-modal]').forEach(item => {
-            if (getComputedStyle(item).display !== 'none') {
-                display = "block";
-            }
+          if (getComputedStyle(item).display !== 'none') {
+              display = "block";
+          }
         });
 
         if (!display) {

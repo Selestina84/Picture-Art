@@ -10,6 +10,7 @@ import scrolling from './modules/scrolling';
 import accordion from './modules/accordion';
 import checkTextInputs from './modules/checkTextInputs';
 import calcForm from './modules/calcForm';
+import mask from './modules/mask';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict'
@@ -28,4 +29,5 @@ window.addEventListener('DOMContentLoaded', () => {
   checkTextInputs('[name = "name"]');
   checkTextInputs('[name = "message"]');
   calcForm('#size', '#material', '#options', '.promocode', '.calc-price');
+  mask('[name = "phone"]');
 })

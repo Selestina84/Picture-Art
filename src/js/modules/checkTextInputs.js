@@ -4,7 +4,7 @@ const checkTextInputs = (selector) => {
   textInputs.forEach(input => {
     input.addEventListener('input', () => {
       input.value = input.value.replace(/[a-z]/ig, '');
-      console.log(input.value)
+    //  console.log(input.value)
     })
   })
 

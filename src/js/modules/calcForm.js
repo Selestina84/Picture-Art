@@ -21,9 +21,6 @@ const calcForm = (sizeSelector, materialSelector, optionSelector, promoSelector,
       result.textContent = sum;
     }
   }
-
-
-
     size.addEventListener('change', calculate);
     material.addEventListener('change', calculate);
     options.addEventListener('change', calculate);

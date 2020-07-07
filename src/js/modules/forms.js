@@ -51,12 +51,19 @@ const forms =() => {
           textMessage.textContent= message.loading;
           statusMessage.appendChild(textMessage);
 
+      let obj ={};
       const formData = new FormData(item);
+      formData.append("id", Math.random())
+      formData.forEach((key, value)=>{
+        obj[key] = value;
+      })
+
+      //console.log(obj)
 
       let api;
         item.closest('.popup-design') || item.classList.contains('calc_form') ? api = path.designer : api= path.questions;
 
-    postData(api, formData)
+    postData(api, obj)
       .then(res => {
         console.log(res)
         statusImg.setAttribute('src', message.ok);

@@ -15,8 +15,8 @@ const forms =() => {
   };
 
   const path = {
-    designer: 'assets/server.php',
-    questions: 'assets/question.php'
+    designer: 'https://my-json-server.typicode.com/Selestina84/Picture-Art/designer',
+    questions: 'https://my-json-server.typicode.com/Selestina84/Picture-Art/users'
   }
 
   upload.forEach(item => {
@@ -32,7 +32,6 @@ const forms =() => {
   form.forEach(item => {
     item.addEventListener('submit', (e) => {
       e.preventDefault();
-
       let statusMessage = document.createElement('div');
       statusMessage.classList.add('status');
       item.parentNode.append(statusMessage);
@@ -53,11 +52,9 @@ const forms =() => {
           statusMessage.appendChild(textMessage);
 
       const formData = new FormData(item);
+
       let api;
         item.closest('.popup-design') || item.classList.contains('calc_form') ? api = path.designer : api= path.questions;
-        console.log(api);
-
-
 
     postData(api, formData)
       .then(res => {

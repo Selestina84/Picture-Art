@@ -1,25 +1,6 @@
 {
     "users": [],
 
-    "designer": [],
-
-    "calc": [{
-        "size" : {
-            "40*50": 1000,
-            "50*70": 1500,
-            "70*70": 2000,
-            "70*100": 2500
-        },
-        "material": {
-            "cloth": 1,
-            "cotton": 1.2,
-            "linen": 1.5
-        },
-        "add": {
-            "cover": 500,
-            "express": 1500,
-            "delivery": 500
-        }
-    }]
+    "designer": []
 
 }

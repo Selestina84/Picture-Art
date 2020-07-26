@@ -1,5 +1,5 @@
 
-import {postData} from '../servises/requests'
+import {postData} from '../servises/requests';
 
 const forms =() => {
   const form = document.querySelectorAll('form'),
@@ -52,11 +52,26 @@ const forms =() => {
           statusMessage.appendChild(textMessage);
 
       let obj ={};
-      const formData = new FormData(item);
-      formData.append("id", Math.random())
-      formData.forEach((key, value)=>{
-        obj[key] = value;
-      })
+        const select = document.querySelector('#size')
+          select.addEventListener('change',() =>{
+            console.log(select.value)
+          })
+
+        if(item.classList.contains('calc_form')){
+          const formData = new FormData(item);
+          formData.append("id", Math.random())
+          formData.forEach((key, value)=>{
+            obj[key] = value;
+          })
+          console.log(obj)
+
+        } else {
+          const formData = new FormData(item);
+          formData.append("id", Math.random())
+          formData.forEach((key, value)=>{
+            obj[key] = value;
+          })
+        }
 
       //console.log(obj)
 

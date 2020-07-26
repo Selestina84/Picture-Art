@@ -7,7 +7,8 @@ const calcForm = (sizeSelector, materialSelector, optionSelector, promoSelector,
         promo = document.querySelector(promoSelector),
         result = document.querySelector(calcFieldSelector);
 
-  let sum = 0;
+  let sum = 0,
+      obj = {};
 
   const calculate = () => {
 
@@ -20,11 +21,20 @@ const calcForm = (sizeSelector, materialSelector, optionSelector, promoSelector,
     } else {
       result.textContent = sum;
     }
+    obj.size = size.value;
+    obj.material = material.value;
+    obj.options = options.value;
+    obj.sum = sum;
+    console.log(obj)
+
   }
     size.addEventListener('change', calculate);
-    material.addEventListener('change', calculate);
+    material.addEventListener('change',calculate);
     options.addEventListener('change', calculate);
     promo.addEventListener('input', calculate);
-}
+
+  }
+
+
 
 export default calcForm;
